@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:24:14 by yihakan           #+#    #+#             */
-/*   Updated: 2025/01/31 20:05:50 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/01/31 20:17:30 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	draw_map(t_game *game)
 	int	y;
 	int	x;
 
-	mlx_clear_window(game->mlx, game->win);
 	y = 0;
 	while (y < game->height)
 	{

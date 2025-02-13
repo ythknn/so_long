@@ -6,12 +6,11 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 14:58:48 by yihakan           #+#    #+#             */
-/*   Updated: 2024/12/27 16:15:38 by yihakan          ###   ########.fr       */
+/*   Updated: 2024/12/28 16:20:04 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
 
 char	*get_next_line(int fd)
 {

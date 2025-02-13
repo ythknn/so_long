@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:24:14 by yihakan           #+#    #+#             */
-/*   Updated: 2025/01/31 20:17:30 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/02/13 16:02:34 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	put_image(t_game *game, void *img, int x, int y)
 {
-	mlx_put_image_to_window(game->mlx, game->win, img, x * game->tile_size, y
-			* game->tile_size);
+	mlx_put_image_to_window(game->mlx, game->win, img, x * game->tile_size,
+		y * game->tile_size);
 }
 
 static void	draw_tile(t_game *game, int x, int y)

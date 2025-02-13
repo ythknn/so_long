@@ -6,13 +6,13 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:27:58 by yihakan           #+#    #+#             */
-/*   Updated: 2025/01/31 02:30:43 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/02/13 15:51:13 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static bool	check_win_condition(t_game *game, int new_x, int new_y)
+static int	check_win_condition(t_game *game, int new_x, int new_y)
 {
 	if (game->map[new_y][new_x] == 'E'
 		&& (game->collected == game->collect_count))
@@ -21,7 +21,7 @@ static bool	check_win_condition(t_game *game, int new_x, int new_y)
 		quit_game(game);
 		exit(0);
 	}
-	return (false);
+	return (0);
 }
 
 static void	move_player(t_game *game, int dx, int dy)
@@ -51,13 +51,13 @@ int	handle_keypress(int keycode, t_game *game)
 		quit_game(game);
 		exit(0);
 	}
-	else if (keycode == KEY_W)
+	else if (keycode == KEY_W || keycode == KEY_UP)
 		move_player(game, 0, -1);
-	else if (keycode == KEY_S)
+	else if (keycode == KEY_S || keycode == KEY_DOWN)
 		move_player(game, 0, 1);
-	else if (keycode == KEY_A)
+	else if (keycode == KEY_A || keycode == KEY_LEFT)
 		move_player(game, -1, 0);
-	else if (keycode == KEY_D)
+	else if (keycode == KEY_D || keycode == KEY_RIGHT)
 		move_player(game, 1, 0);
 	draw_map(game);
 	return (0);

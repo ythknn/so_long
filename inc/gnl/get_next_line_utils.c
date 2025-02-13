@@ -6,16 +6,16 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 14:58:59 by yihakan           #+#    #+#             */
-/*   Updated: 2024/12/27 16:03:09 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/02/13 20:36:22 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *str;
-	size_t i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
 	if (!s)
@@ -35,10 +35,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-	char *str;
-	int i;
+	char	*str;
+	int		i;
 
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
@@ -53,9 +53,9 @@ char *ft_strdup(const char *s1)
 	return (str);
 }
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -63,9 +63,9 @@ size_t ft_strlen(const char *str)
 	return (i);
 }
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!s)
@@ -81,11 +81,11 @@ char *ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
-	char *str;
-	int i;
-	int j;
+	char	*str;
+	int		i;
+	int		j;
 
 	i = -1;
 	j = 0;

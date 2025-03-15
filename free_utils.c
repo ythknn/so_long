@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:27:54 by yihakan           #+#    #+#             */
-/*   Updated: 2025/02/17 20:49:40 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/03/16 00:45:15 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	quit_game(t_game *game)
 	}
 	if (game->mlx)
 	{
-		mlx_destroy_display(game->mlx);
+		//mlx_destroy_display(game->mlx);
 		free (game->mlx);
 	}
 	return (0);

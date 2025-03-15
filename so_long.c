@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:10:48 by yihakan           #+#    #+#             */
-/*   Updated: 2025/02/25 14:45:05 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/03/16 00:18:24 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		perror("Error\nUsage: ./so_long <map.ber>\n");
+		write(1, "Error\nUsage: ./so_long <map.ber>\n", 33);
 		return (1);
 	}
 	if (!check_ext(argv[1]))

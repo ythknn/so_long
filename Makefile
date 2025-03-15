@@ -18,6 +18,7 @@ SRCS        = so_long.c \
               draw.c \
               hooks.c \
               free_utils.c \
+			  utils.c \
 			  inc/gnl/get_next_line.c \
        		  inc/gnl/get_next_line_utils.c
 

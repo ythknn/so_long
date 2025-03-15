@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:27:54 by yihakan           #+#    #+#             */
-/*   Updated: 2025/01/31 02:30:39 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/02/17 20:49:40 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	free_map(char **map, int height)
 	if (!map)
 		return ;
 	i = 0;
-	while (i < height && map[i])
+	while (i < height)
 	{
-		free(map[i]);
+		if (map[i])
+			free(map[i]);
 		i++;
 	}
 	free(map);
@@ -44,6 +45,11 @@ int	quit_game(t_game *game)
 		if (game->exit_img)
 			mlx_destroy_image(game->mlx, game->exit_img);
 		mlx_destroy_window(game->mlx, game->win);
+	}
+	if (game->mlx)
+	{
+		mlx_destroy_display(game->mlx);
+		free (game->mlx);
 	}
 	return (0);
 }

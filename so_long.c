@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:10:48 by yihakan           #+#    #+#             */
-/*   Updated: 2025/02/13 18:05:33 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/02/25 14:45:05 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,21 @@ int	main(int argc, char **argv)
 		perror("Error\nUsage: ./so_long <map.ber>\n");
 		return (1);
 	}
+	if (!check_ext(argv[1]))
+	{
+		write(1, "Bad extension\n", 14);
+		return (1);
+	}
 	init_game(&game);
 	if (!setup_game(&game, argv[1]))
 	{
-		perror("Error\nFailed to initialize game.\n");
+		write(1, "Not exist map\n", 14);
 		quit_game(&game);
 		return (1);
 	}
 	draw_map(&game);
 	mlx_hook(game.win, 17, 0, handle_close, &game);
-	mlx_key_hook(game.win, handle_keypress, &game);
+	mlx_hook(game.win, 2, 1L << 0, handle_keypress, &game);
 	mlx_loop(game.mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:23:59 by yihakan           #+#    #+#             */
-/*   Updated: 2025/02/13 18:09:24 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/02/25 14:39:36 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,9 @@ int			count_map_elements(t_game *game, int *p_count, int *e_count,
 void		flood_fill(char **visited, int x, int y, t_game *game);
 int			check_reachable(char **visited, t_game *game);
 int			init_visited_map(t_game *game, char ***visited);
+
+void		ft_putchar_fd(char c, int fd);
+void		ft_putnbr_fd(int n, int fd);
+int			check_ext(char *map);
 
 #endif

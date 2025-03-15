@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:27:58 by yihakan           #+#    #+#             */
-/*   Updated: 2025/02/13 15:51:13 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/02/22 15:44:51 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static void	move_player(t_game *game, int dx, int dy)
 	game->player_x = new_x;
 	game->player_y = new_y;
 	game->moves++;
+	ft_putnbr_fd(game->moves, 1);
+	ft_putchar_fd('\n', 1);
 	check_win_condition(game, new_x, new_y);
 }
 

@@ -5,8 +5,10 @@ CFLAGS      = -Wall -Wextra -Werror -g -I./mlx
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Darwin)
+    MLX_URL = https://cdn.intra.42.fr/document/document/31098/minilibx_opengl.tgz
     MLX_FLAGS = -L./mlx -lmlx -framework OpenGL -framework AppKit
 else
+    MLX_URL = https://cdn.intra.42.fr/document/document/31097/minilibx-linux.tgz
     MLX_FLAGS = -L ./mlx -lmlx -lXext -lX11 -lm -lz
 endif
 
@@ -26,10 +28,20 @@ SRCS        = so_long.c \
 # -----------------------------------------------------------------------------
 #                               MAIN TARGETS
 # -----------------------------------------------------------------------------
-all: $(NAME)
+all: mlx $(NAME)
 
-$(NAME): $(SRCS) $(MLX)
+$(NAME): $(SRCS) mlx
 	$(CC) $(CFLAGS) $(SRCS) $(MLX_FLAGS) -o $(NAME)
+
+mlx:
+	@if [ ! -d "mlx" ]; then \
+		curl -o minilibx.tgz $(MLX_URL); \
+		tar -xzf minilibx.tgz; \
+		rm -f minilibx.tgz; \
+		mv minilibx* mlx; \
+		cd mlx && make; \
+	echo "MiniLibX downloaded and built."; \
+	fi
 
 # -----------------------------------------------------------------------------
 #                               CLEAN TARGETS

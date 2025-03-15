@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:28:10 by yihakan           #+#    #+#             */
-/*   Updated: 2025/02/25 14:46:16 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/03/16 02:42:30 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static void	clean_newline(char *line)
 	len = ft_strlen_int(line);
 	if (len > 0 && line[len - 1] == '\n')
 		line[len - 1] = '\0';
-	
 }
 
 static int	process_map_lines(int fd, char **map, t_game *game)

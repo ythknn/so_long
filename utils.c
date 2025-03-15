@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 20:43:30 by yihakan           #+#    #+#             */
-/*   Updated: 2025/02/25 14:40:07 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/03/16 02:42:07 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ int	check_ext(char *map)
 	i = ft_strlen_int(map);
 	if (i > 2 && map[i - 4] == '.' && map[i - 3] == 'b'
 		&& map[i - 2] == 'e' && map[i - 1] == 'r')
-		return 1;
+		return (1);
 	else
 	{
 		perror("Bad extension");
-		return 0;
+		return (0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: yihakan <yihakan@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:10:48 by yihakan           #+#    #+#             */
-/*   Updated: 2025/03/16 00:18:24 by yihakan          ###   ########.fr       */
+/*   Updated: 2025/03/16 02:33:17 by yihakan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ static int	init_window(t_game *game)
 {
 	game->mlx = mlx_init();
 	if (!game->mlx)
+	{
+		write(1, "window init error\n", 18);
 		return (0);
+	}	
 	game->win = mlx_new_window(game->mlx, game->width * game->tile_size,
 			game->height * game->tile_size, "so_long");
 	if (!game->win)
@@ -41,7 +44,10 @@ static int	load_textures(t_game *game)
 			&h);
 	if (!game->wall_img || !game->floor_img || !game->player_img
 		|| !game->collect_img || !game->exit_img)
+	{
+		write(1, "error loading textures\n", 23);
 		return (0);
+	}
 	return (1);
 }
 
